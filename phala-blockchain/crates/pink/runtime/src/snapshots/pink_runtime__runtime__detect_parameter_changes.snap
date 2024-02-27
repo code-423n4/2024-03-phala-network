@@ -1,0 +1,161 @@
+---
+source: crates/pink/runtime/src/runtime.rs
+assertion_line: 166
+expression: "(<PinkRuntime as frame_system::Config>::BlockWeights::get(),\n    <PinkRuntime as Config>::Schedule::get(),\n    <PinkRuntime as Config>::DefaultDepositLimit::get(),\n    <PinkRuntime as Config>::MaxCodeLen::get(),\n    <PinkRuntime as Config>::MaxStorageKeyLen::get())"
+---
+(
+    BlockWeights {
+        base_block: Weight {
+            ref_time: 390584000,
+            proof_size: 0,
+        },
+        max_block: Weight {
+            ref_time: 2000000000000,
+            proof_size: 18446744073709551615,
+        },
+        per_class: PerDispatchClass {
+            normal: WeightsPerClass {
+                base_extrinsic: Weight {
+                    ref_time: 124414000,
+                    proof_size: 0,
+                },
+                max_extrinsic: Some(
+                    Weight {
+                        ref_time: 1299875586000,
+                        proof_size: 11990383647911208550,
+                    },
+                ),
+                max_total: Some(
+                    Weight {
+                        ref_time: 1500000000000,
+                        proof_size: 13835058055282163711,
+                    },
+                ),
+                reserved: Some(
+                    Weight {
+                        ref_time: 0,
+                        proof_size: 0,
+                    },
+                ),
+            },
+            operational: WeightsPerClass {
+                base_extrinsic: Weight {
+                    ref_time: 124414000,
+                    proof_size: 0,
+                },
+                max_extrinsic: Some(
+                    Weight {
+                        ref_time: 1799875586000,
+                        proof_size: 16602069666338596454,
+                    },
+                ),
+                max_total: Some(
+                    Weight {
+                        ref_time: 2000000000000,
+                        proof_size: 18446744073709551615,
+                    },
+                ),
+                reserved: Some(
+                    Weight {
+                        ref_time: 500000000000,
+                        proof_size: 4611686018427387904,
+                    },
+                ),
+            },
+            mandatory: WeightsPerClass {
+                base_extrinsic: Weight {
+                    ref_time: 124414000,
+                    proof_size: 0,
+                },
+                max_extrinsic: None,
+                max_total: None,
+                reserved: None,
+            },
+        },
+    },
+    Schedule {
+        limits: Limits {
+            event_topics: 4,
+            globals: 256,
+            locals: 1024,
+            parameters: 128,
+            memory_pages: 64,
+            table_size: 4096,
+            br_table_size: 256,
+            subject_len: 32,
+            payload_len: 1048576,
+            runtime_memory: 2147483648,
+        },
+        instruction_weights: InstructionWeights {
+            base: 8000,
+        },
+        host_fn_weights: HostFnWeights {
+            caller: "339.3 ns, 6 bytes",
+            is_contract: "3.8 µs, 2684 bytes",
+            code_hash: "4.7 µs, 2688 bytes",
+            own_code_hash: "428.8 ns, 6 bytes",
+            caller_is_origin: "183.1 ns, 3 bytes",
+            caller_is_root: "165.4 ns, 3 bytes",
+            address: "343.8 ns, 6 bytes",
+            gas_left: "371.5 ns, 6 bytes",
+            balance: "1.7 µs, 6 bytes",
+            value_transferred: "347.4 ns, 6 bytes",
+            minimum_balance: "337.2 ns, 6 bytes",
+            block_number: "330.8 ns, 6 bytes",
+            now: "337.9 ns, 6 bytes",
+            weight_to_fee: "1.4 µs, 14 bytes",
+            input: "282.7 ns, 6 bytes",
+            input_per_byte: "1.1 ns, 0 bytes",
+            r#return: "0 ps, 45 bytes",
+            return_per_byte: "391 ps, 0 bytes",
+            terminate: "126.5 µs, 5266 bytes",
+            random: "2.1 µs, 10 bytes",
+            deposit_event: "3.8 µs, 10 bytes",
+            deposit_event_per_topic: "3.7 µs, 2508 bytes",
+            deposit_event_per_byte: "731 ps, 0 bytes",
+            debug_message: "241.2 ns, 7 bytes",
+            debug_message_per_byte: "1.1 ns, 0 bytes",
+            set_storage: "7.1 µs, 293 bytes",
+            set_storage_per_new_byte: "547 ps, 0 bytes",
+            set_storage_per_old_byte: "558 ps, 1 bytes",
+            set_code_hash: "27.6 µs, 3090 bytes",
+            clear_storage: "6.9 µs, 289 bytes",
+            clear_storage_per_byte: "4 ps, 1 bytes",
+            contains_storage: "5.5 µs, 289 bytes",
+            contains_storage_per_byte: "83 ps, 1 bytes",
+            get_storage: "5.7 µs, 297 bytes",
+            get_storage_per_byte: "1.0 ns, 1 bytes",
+            take_storage: "6.9 µs, 297 bytes",
+            take_storage_per_byte: "643 ps, 1 bytes",
+            transfer: "38.5 µs, 2520 bytes",
+            call: "248.2 µs, 2721 bytes",
+            delegate_call: "249.9 µs, 2637 bytes",
+            call_transfer_surcharge: "357.4 µs, 5227 bytes",
+            call_per_cloned_byte: "1.1 ns, 0 bytes",
+            instantiate: "388.3 µs, 2731 bytes",
+            instantiate_transfer_surcharge: "0 ps, 2549 bytes",
+            instantiate_per_input_byte: "2.0 ns, 0 bytes",
+            instantiate_per_salt_byte: "2.1 ns, 0 bytes",
+            hash_sha2_256: "400.6 ns, 8 bytes",
+            hash_sha2_256_per_byte: "1.1 ns, 0 bytes",
+            hash_keccak_256: "802.4 ns, 8 bytes",
+            hash_keccak_256_per_byte: "3.4 ns, 0 bytes",
+            hash_blake2_256: "480.5 ns, 8 bytes",
+            hash_blake2_256_per_byte: "1.3 ns, 0 bytes",
+            hash_blake2_128: "505.3 ns, 8 bytes",
+            hash_blake2_128_per_byte: "1.3 ns, 0 bytes",
+            ecdsa_recover: "46.0 µs, 77 bytes",
+            ecdsa_to_eth_address: "11.9 µs, 42 bytes",
+            sr25519_verify: "56.1 µs, 112 bytes",
+            sr25519_verify_per_byte: "6.2 ns, 1 bytes",
+            reentrance_count: "180.7 ns, 3 bytes",
+            account_reentrance_count: "318.1 ns, 40 bytes",
+            instantiation_nonce: "152.8 ns, 3 bytes",
+            add_delegate_dependency: "6.7 µs, 2606 bytes",
+            remove_delegate_dependency: "5.9 µs, 2568 bytes",
+        },
+    },
+    340282366920938463463374607431768211455,
+    2097152,
+    128,
+)

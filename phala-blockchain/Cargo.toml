@@ -1,0 +1,62 @@
+[profile.release]
+panic = "abort"
+opt-level = 3
+
+# make sure dev builds with backtrace do
+# not slow us down
+[profile.dev.package.backtrace]
+inherits = "release"
+
+[profile.production]
+inherits = "release"
+lto = true
+codegen-units = 1
+
+[profile.testnet]
+inherits = "release"
+debug = 1 # debug symbols are useful for profilers
+debug-assertions = true
+overflow-checks = true
+
+[workspace]
+resolver = "2"
+
+exclude = [
+	"e2e/contracts",
+]
+
+members = [
+	"crates/phala-mq",
+	"crates/phala-crypto",
+	"crates/phala-types",
+	"crates/phala-git-revision",
+	"crates/phala-types",
+	"crates/phala-sanitized-logger",
+	"crates/pink/loader",
+	"crates/pink/runtime",
+	"crates/pink/capi",
+	"crates/pink/macro",
+	"crates/pink/pink-types",
+	"crates/pink/pink",
+	"crates/pink/chain-extension",
+	"crates/pink/pink/macro",
+	"crates/phala-serde-more",
+	"crates/reqwest-env-proxy",
+	"crates/sgx-attestation",
+	"crates/type-info-stringify",
+]
+
+[patch.crates-io]
+# TODO.kevin: Move back to crates.io once it released 1.0
+derive_more = { version = "0.99.17", git = "https://github.com/JelteF/derive_more" }
+
+ring = { git = "https://github.com/jasl/ring-xous", branch = "better-wasm32-support" }
+
+sp-core = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "release-polkadot-v1.5.0" }
+sp-core-hashing = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "release-polkadot-v1.5.0" }
+sp-std = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "release-polkadot-v1.5.0" }
+sp-runtime-interface = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "release-polkadot-v1.5.0" }
+
+# For pink-chain-extension, it will introduce Substrate from crates-io which usually different with polkadot-branch
+pink = { path = "crates/pink/pink" }
+pink-chain-extension = { path = "crates/pink/chain-extension" }
