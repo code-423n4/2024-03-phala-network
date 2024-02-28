@@ -1,0 +1,19 @@
+[package]
+description = "Helper macros for pink runtime"
+homepage = "https://github.com/Phala-Network/phala-blockchain"
+license = "Apache-2.0"
+edition = "2021"
+name = "pink-runtime-macro"
+version = "0.1.1"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "1.0"
+syn = { version = "1.0", features = ["full", "visit-mut", "extra-traits", "parsing"] }
+template-quote = "0.3"
+
+[dev-dependencies]
+insta = "1.14.0"
+rustfmt-snippet = { version = "0.1.0" }

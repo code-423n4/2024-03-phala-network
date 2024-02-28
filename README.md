@@ -1,35 +1,4 @@
-# Repo setup
-
-## ⭐️ Sponsor: Add code to this repo
-
-- [ ] Create a PR to this repo with the below changes:
-- [ ] Provide a self-contained repository with working commands that will build (at least) all in-scope contracts, and commands that will run tests producing gas reports for the relevant contracts.
-- [ ] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
-- [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 48 business hours prior to audit start time.**
-- [ ] Be prepared for a 🚨code freeze🚨 for the duration of the audit — important because it establishes a level playing field. We want to ensure everyone's looking at the same code, no matter when they look during the audit. (Note: this includes your own repo, since a PR can leak alpha to our wardens!)
-
-
----
-
-## ⭐️ Sponsor: Edit this `README.md` file
-
-- [ ] Modify the contents of this `README.md` file. Describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. (Here are two well-constructed examples: [Ajna Protocol](https://github.com/code-423n4/2023-05-ajna) and [Maia DAO Ecosystem](https://github.com/code-423n4/2023-05-maia))
-- [ ] Review the Gas award pool amount. This can be adjusted up or down, based on your preference - just flag it for Code4rena staff so we can update the pool totals across all comms channels.
-- [ ] Optional / nice to have: pre-record a high-level overview of your protocol (not just specific smart contract functions). This saves wardens a lot of time wading through documentation.
-- [ ] [This checklist in Notion](https://code4rena.notion.site/Key-info-for-Code4rena-sponsors-f60764c4c4574bbf8e7a6dbd72cc49b4#0cafa01e6201462e9f78677a39e09746) provides some best practices for Code4rena audits.
-
-## ⭐️ Sponsor: Final touches
-- [ ] Review and confirm the details in the section titled "Scoping details" and alert Code4rena staff of any changes.
-- [ ] Review and confirm the list of in-scope files in the `scope.txt` file in this directory.  Any files not listed as "in scope" will be considered out of scope for the purposes of judging, even if the file will be part of the deployed contracts.
-- [ ] Check that images and other files used in this README have been uploaded to the repo as a file and then linked in the README using absolute path (e.g. `https://github.com/code-423n4/yourrepo-url/filepath.png`)
-- [ ] Ensure that *all* links and image/file paths in this README use absolute paths, not relative paths
-- [ ] Check that all README information is in markdown format (HTML does not render on Code4rena.com)
-- [ ] Remove any part of this template that's not relevant to the final version of the README (e.g. instructions in brackets and italic)
-- [ ] Delete this checklist and all text above the line below when you're ready.
-
----
-
-# Sponsorname audit details
+# Pink runtime audit details
 - Total Prize Pool: 60,500 in USDC
   - HM awards: 46,250 in USDC
   - Analysis awards: 2,500 in USDC
@@ -51,52 +20,140 @@ Automated findings output for the audit can be found [here](https://github.com/c
 
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
-[ ⭐️ SPONSORS: Are there any known issues or risks deemed acceptable that shouldn't lead to a valid finding? If so, list them here. ]
-
 
 # Overview
 
-[ ⭐️ SPONSORS: add info here ]
+## About Pink Runtime
+`pink-runtime` is the `ink!` contract execution engine for Phala Network, built on Substrate's `pallet-contracts` with custom chain extensions, written in Rust.
+It executes smart contracts on the Phala Network. It is compiled to a Linux shared object, `libpink.so`. It is loaded and runs in the Phala Network's off-chain TEE workers.
+
+See the [README](https://github.com/code-423n4/2024-03-phala-network/blob/main/phala-blockchain/crates/pink/runtime/README.md) for more information.
 
 ## Links
 
 - **Previous audits:** 
-- **Documentation:**
-- **Website:**
-- **Twitter:** 
-- **Discord:** 
+- **Documentation:** https://docs.phala.network/developers/phat-contract
+- **Website:** https://phala.network/
+- **Github:** https://github.com/Phala-Network/phala-blockchain
+- **Twitter:** https://twitter.com/PhalaNetwork
+- **Discord:** https://discord.com/invite/phala
 
 
 # Scope
 
-[ ⭐️ SPONSORS: add scoping and technical details here ]
+The codes in this repository are copied from Phala Network's [repository](https://github.com/Phala-Network/phala-blockchain), keeping the directory structure while removing unnecessary files and directories.
 
-- [ ] In the table format shown below, provide the name of each contract and:
-  - [ ] source lines of code (excluding blank lines and comments) in each *For line of code counts, we recommend running prettier with a 100-character line length, and using [cloc](https://github.com/AlDanial/cloc).* 
-  - [ ] external contracts called in each
-  - [ ] libraries used in each
+## Files in scope
 
-*List all files in scope in the table below (along with hyperlinks) -- and feel free to add notes here to emphasize areas of focus.*
+| File | SLOC | Purpose |
+| ----------- | ----------- | ----------- |
+| [pink/runtime/src/runtime.rs](https://github.com/code-423n4/2024-03-phala-network/blob/main/phala-blockchain/crates/pink/runtime/src/runtime.rs) | 209 | Construct and configure the substrate runtime |
+| [pink/runtime/src/contract.rs](https://github.com/code-423n4/2024-03-phala-network/blob/main/phala-blockchain/crates/pink/runtime/src/contract.rs) | 199 | The contracts call/instantiation API |
+| [pink/runtime/src/storage/mod.rs](https://github.com/code-423n4/2024-03-phala-network/blob/main/phala-blockchain/crates/pink/runtime/src/storage/mod.rs) | 119 | Abstract storage provider for the runtime |
+| [pink/runtime/src/storage/external_backend.rs](https://github.com/code-423n4/2024-03-phala-network/blob/main/phala-blockchain/crates/pink/runtime/src/storage/external_backend.rs) | 18 | The storage provider for the runtime |
+| [pink/runtime/src/runtime/pallet_pink.rs](https://github.com/code-423n4/2024-03-phala-network/blob/main/phala-blockchain/crates/pink/runtime/src/runtime/pallet_pink.rs) | 168 | The pallet used to store some costom configuration of the runtime |
+| [pink/runtime/src/capi/mod.rs](https://github.com/code-423n4/2024-03-phala-network/blob/main/phala-blockchain/crates/pink/runtime/src/capi/mod.rs) | 53 | The entrypoint of the libpink.so, FFI helpers bridge between the cross lib boundary |
+| [pink/runtime/src/capi/ecall_impl.rs  ](https://github.com/code-423n4/2024-03-phala-network/blob/main/phala-blockchain/crates/pink/runtime/src/capi/ecall_impl.rs  ) | 273 | The enterward cross boundary call support |
+| [pink/runtime/src/capi/ocall_impl.rs](https://github.com/code-423n4/2024-03-phala-network/blob/main/phala-blockchain/crates/pink/runtime/src/capi/ocall_impl.rs) | 92 | The low level outward cross boundary call support |
+| [pink/runtime/src/src/runtime/extension.rs](https://github.com/code-423n4/2024-03-phala-network/blob/main/phala-blockchain/crates/pink/runtime/src/src/runtime/extension.rs) | 440 | The chain extension implementation of the runtime, inheriting pink-chain-extension with some overwrites |
+| [pink/capi/src/v1/mod.rs](https://github.com/code-423n4/2024-03-phala-network/blob/main/phala-blockchain/crates/pink/capi/src/v1/mod.rs) | 225 | Definition of the cross host-lib function calls (ecalls and ocalls) |
+| [pink/capi/src/types.rs](https://github.com/code-423n4/2024-03-phala-network/blob/main/phala-blockchain/crates/pink/capi/src/types.rs) | 86 | Types exported to host |
+| [pink/chain-extension/src/lib.rs](https://github.com/code-423n4/2024-03-phala-network/blob/main/phala-blockchain/crates/pink/chain-extension/src/lib.rs) | 458 | The chain extension feature implementation |
+| [pink/chain-extension/src/local_cache.rs](https://github.com/code-423n4/2024-03-phala-network/blob/main/phala-blockchain/crates/pink/chain-extension/src/local_cache.rs) | 371 | Implementation of the feature worker local cache |
+| Total | 2711 | |
 
-| Contract | SLOC | Purpose | Libraries used |  
-| ----------- | ----------- | ----------- | ----------- |
-| [contracts/folder/sample.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 123 | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
 
 ## Out of scope
 
-*List any files/contracts that are out of scope for this audit.*
+These files are some direct or indirect dependencies of the runtime but most of the codes are not included
+in the final runtime shared object. They are not in the scope of this audit.
 
-# Additional Context
-
-- [ ] Describe any novel or unique curve logic or mathematical models implemented in the contracts
-- [ ] Please list specific ERC20 that your protocol is anticipated to interact with. Could be "any" (literally anything, fee on transfer tokens, ERC777 tokens and so forth) or a list of tokens you envision using on launch.
-- [ ] Please list specific ERC721 that your protocol is anticipated to interact with.
-- [ ] Which blockchains will this code be deployed to, and are considered in scope for this audit?
-- [ ] Please list all trusted roles (e.g. operators, slashers, pausers, etc.), the privileges they hold, and any conditions under which privilege escalation is expected/allowable
-- [ ] In the event of a DOS, could you outline a minimum duration after which you would consider a finding to be valid? This question is asked in the context of most systems' capacity to handle DoS attacks gracefully for a certain period.
-- [ ] Is any part of your implementation intended to conform to any EIP's? If yes, please list the contracts in this format: 
-  - `Contract1`: Should comply with `ERC/EIPX`
-  - `Contract2`: Should comply with `ERC/EIPY`
+```
+crates/sgx-attestation/src/lib.rs
+crates/sgx-attestation/src/dcap.rs
+crates/sgx-attestation/src/ias.rs
+crates/sgx-attestation/src/dcap/constants.rs
+crates/sgx-attestation/src/dcap/quote.rs
+crates/sgx-attestation/src/dcap/tcb_info.rs
+crates/sgx-attestation/src/dcap/report.rs
+crates/sgx-attestation/src/dcap/utils.rs
+crates/sgx-attestation/src/ias/report.rs
+crates/sgx-attestation/src/gramine.rs
+crates/sgx-attestation/build.rs
+crates/this-crate/src/lib.rs
+crates/phala-crypto/src/lib.rs
+crates/phala-crypto/src/ecdh.rs
+crates/phala-crypto/src/aead/stream.rs
+crates/phala-crypto/src/key_share.rs
+crates/phala-crypto/src/sr25519.rs
+crates/phala-crypto/src/aead.rs
+crates/pink/capi/src/lib.rs
+crates/pink/capi/src/helper.rs
+crates/pink/capi/build.rs
+crates/pink/pink/tests/test_chain_extensions.rs
+crates/pink/pink/src/lib.rs
+crates/pink/pink/src/logger.rs
+crates/pink/pink/src/allocator_dlmalloc.rs
+crates/pink/pink/src/system.rs
+crates/pink/pink/src/topic.rs
+crates/pink/pink/src/chain_extension/http_request.rs
+crates/pink/pink/src/chain_extension/test.rs
+crates/pink/pink/src/chain_extension/signing.rs
+crates/pink/pink/macro/src/lib.rs
+crates/pink/pink/macro/src/chain_extension.rs
+crates/pink/pink/macro/src/contract.rs
+crates/pink/pink/macro/src/driver_system.rs
+crates/pink/macro/src/lib.rs
+crates/pink/macro/src/macro_xcall.rs
+crates/pink/macro/src/tests.rs
+crates/pink/runtime/tests/helpers/ink_helpers.rs
+crates/pink/runtime/tests/helpers/mod.rs
+crates/pink/runtime/tests/helpers/xcalls.rs
+crates/pink/runtime/tests/helpers/test_cluster.rs
+crates/pink/runtime/tests/helpers/storage.rs
+crates/pink/runtime/tests/test_pink_contract.rs
+crates/pink/runtime/src/export_fixtures.rs
+crates/pink/runtime/src/storage/in_memory_backend.rs
+crates/pink/loader/src/lib.rs
+crates/pink/loader/src/runtimes.rs
+crates/pink/loader/src/storage.rs
+crates/pink/loader/src/runtimes/v1.rs
+crates/pink/chain-extension/src/mock_ext.rs
+crates/pink/pink-types/src/lib.rs
+crates/pink/pink-types/src/result.rs
+crates/pink/pink-types/src/js.rs
+crates/pink/pink-types/src/sgx.rs
+crates/phala-git-revision/src/lib.rs
+crates/phala-git-revision/build.rs
+crates/phala-types/src/lib.rs
+crates/phala-types/src/contract.rs
+crates/type-info-stringify/src/lib.rs
+crates/phala-serde-more/src/lib.rs
+crates/phala-serde-more/src/option_key_bytes.rs
+crates/phala-serde-more/src/scale_bytes.rs
+crates/phala-serde-more/src/key_bytes.rs
+crates/phala-serde-more/src/pubkey_bytes.rs
+crates/reqwest-env-proxy/src/lib.rs
+crates/phala-mq/tests/tests.rs
+crates/phala-mq/src/lib.rs
+crates/phala-mq/src/types.rs
+crates/phala-mq/src/send_queue.rs
+crates/phala-mq/src/simple_mpsc.rs
+crates/phala-mq/src/checkpoint_helper.rs
+crates/phala-mq/src/dispatcher.rs
+crates/phala-mq/src/signer/mod.rs
+crates/phala-trie-storage/tests/test_state_root.rs
+crates/phala-trie-storage/src/lib.rs
+crates/phala-trie-storage/src/memdb.rs
+crates/phala-trie-storage/src/ser.rs
+crates/phala-sanitized-logger/src/lib.rs
+crates/phala-sanitized-logger/src/logger.rs
+crates/phala-sanitized-logger/src/test.rs
+crates/phala-sanitized-logger/src/subscriber.rs
+crates/prpc/src/lib.rs
+crates/phala-wasm-checker/src/lib.rs
+crates/phala-wasm-checker/src/error.rs
+```
 
 ## Attack ideas (Where to look for bugs)
 *List specific areas to address - see [this blog post](https://medium.com/code4rena/the-security-council-elections-within-the-arbitrum-dao-a-comprehensive-guide-aa6d001aae60#9adb) for an example*
@@ -105,17 +162,16 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 *Describe the project's main invariants (properties that should NEVER EVER be broken).*
 
 ## Scoping Details 
-[ ⭐️ SPONSORS: please confirm/edit the information below. ]
 
 ```
 - If you have a public code repo, please share it here:  https://github.com/Phala-Network/phala-blockchain/blob/master/crates/pink/runtime/, https://github.com/Phala-Network/phala-blockchain/blob/master/crates/pink/capi/  
 - How many contracts are in scope?: 1   
-- Total SLoC for these contracts?: 2416  
+- Total SLoC for these contracts?: 2711
 - How many external imports are there?: 28  
 - How many separate interfaces and struct definitions are there for the contracts within scope?: struct: 24, trait: 10  
 - Does most of your code generally use composition or inheritance?: Composition   
 - How many external calls?: 0   
-- What is the overall line coverage percentage provided by your tests?: 10
+- What is the overall line coverage percentage provided by your tests?: 90
 - Is this an upgrade of an existing system?: No
 - On which Parachain will the contracts be deployed?: Phala Network
 - Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): ERC-20 Token, Non ERC-20 Token, Timelock function 
@@ -130,9 +186,12 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 
 # Tests
 
-*Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report.* 
-
-*Note: Many wardens run Slither as a first pass for testing.  Please document any known errors with no workaround.* 
+```sh
+git clone https://github.com/code-423n4/2024-03-phala-network
+cd 2024-03-phala-network/phala-blockchain/crates/pink/runtime
+cargo test  # for test only
+./cov.sh # for coverage report
+```
 
 ## Miscellaneous
 
