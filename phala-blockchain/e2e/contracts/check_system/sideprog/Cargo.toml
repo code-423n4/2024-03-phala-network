@@ -12,7 +12,7 @@ crate-type = ["cdylib"]
 [dependencies]
 log = "0.4.16"
 once_cell = "1.10.0"
-sidevm = { path = "../../../../crates/sidevm/sidevm" }
+sidevm = { version = "0.2.0-alpha.7" }
 tokio = { version = "1", features = ["macros"] }
 futures = "0.3"
 hex_fmt = "0.3"
