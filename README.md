@@ -174,9 +174,12 @@ crates/phala-wasm-checker/src/error.rs
 ```sh
 git clone https://github.com/code-423n4/2024-03-phala-network
 cd 2024-03-phala-network/phala-blockchain/crates/pink/runtime
-cargo test  # for test only
-cargo install cargo-llvm-cov # if not already installed
-./cov.sh # for coverage report
+# for test only
+cargo test
+# if not already installed
+cargo install cargo-llvm-cov 
+# for coverage report
+./cov.sh 
 ```
 
 ## Miscellaneous
