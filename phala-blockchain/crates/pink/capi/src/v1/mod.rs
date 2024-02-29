@@ -344,7 +344,6 @@ pub mod ocall {
 fn coverage_ctypes() {
     #[derive(Debug, Default, Clone)]
     struct Test {
-        _fsid_t: types::__fsid_t,
         _imaxdiv_t: types::imaxdiv_t,
         _max_align_t: types::max_align_t,
         _ocalls_t: types::ocalls_t,
