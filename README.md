@@ -7,7 +7,7 @@
   - Lookout awards: 4,000 in USDC
   - Scout awards: $500 in USDC
 - Join [C4 Discord](https://discord.gg/code4rena) to register
-- Submit findings [using the C4 form](https://code4rena.com/contests/2024-03-phala-network/submit)
+- Submit findings [using the C4 form](https://code4rena.com/contests/2024-03-phat-contract-runtime/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts March 1, 2024 20:00 UTC
 - Ends March 22, 2024 20:00 UTC
