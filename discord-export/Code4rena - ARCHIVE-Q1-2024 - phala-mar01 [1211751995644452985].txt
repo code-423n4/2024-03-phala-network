@@ -1,0 +1,630 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q1-2024 / phala-mar01
+==============================================================
+
+[02/28/2024 20:28] kartoonjoy (pinned)
+👋 Hello and welcome to the audit channel for the $60,500 in USDC **Phat Contract Runtime** audit!
+
+📆 Audit opens 03/01/2024 20:00 (20:00 UTC) and runs through 03/22/2024 20:00 (20:00 UTC) (21 days).
+
+Please give a warm welcome to the Phat Network team, particularly @Kevin Wang, @Hang - Phala and @Shelven | Phala, who will be available for questions either here in the channel or via a PRIVATE thread in the UTC+8 (China Time) timezone(s).
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this audit, consider enabling notifications for this channel. 🐺 ⏰
+
+Audit Page: https://code4rena.com/audits/2024-03-phat-contract-runtime#top
+Environment: EVM
+Language: Rust
+
+{Embed}
+https://code4rena.com/audits/2024-03-phat-contract-runtime
+Phat Contract Runtime | Code4rena
+$60,500 in USDC
+1 March 8:00 PM—22 March 8:00 PM
+Code4rena - ARCHIVE-Q1-2024 - phala-mar01 [1211751995644452985].txt_Files/c4-og-banner-70081.png
+
+{Reactions}
+👍 (4) 
+
+[02/28/2024 20:29] kartoonjoy
+Pinned a message.
+
+
+[03/01/2024 02:23] mctoady
+The audit page on the site is missing, has this contest been cancelled/moved?
+
+
+[03/01/2024 02:27] itsmetechjay
+It hasn't been cancelled or delayed - we are working to get it listed back on the site.
+
+{Reactions}
+salute 
+
+[03/01/2024 04:29] liveactionllamac4
+This should be fixed now. 🙂
+
+{Reactions}
+thankyou (2) 
+
+[03/01/2024 20:01] aodkgkrogrogoovg2o3btivr
+is this contest invitational ??
+
+
+[03/01/2024 20:02] C4 (pinned)
+**Automated Findings / Publicly Known Issues**
+
+Reminder: all [Automated Findings / Publicly Known Issues](https://github.com/code-423n4/2024-03-phala-network#automated-findings--publicly-known-issues) are out of scope and ineligible for awards.
+
+
+[03/01/2024 20:04] castle_chain
+I have the same question
+
+
+[03/01/2024 20:04] castle_chain
+i think this is public
+
+
+[03/01/2024 20:04] aodkgkrogrogoovg2o3btivr
+it is public because the announcement appeared that the contest started & on invitationals it just start without announcement
+
+
+[03/01/2024 20:05] itsmetechjay
+It is public
+
+
+[03/01/2024 20:06] itsmetechjay
+You'll see it on the page in a few minutes
+
+
+[03/01/2024 20:06] itsmetechjay
+Pinned a message.
+
+
+[03/01/2024 20:21] castle_chain
+no previous audits , fine
+
+
+[03/02/2024 01:25] _3doc_
+[moderately OT] may I propose a mascot for this contest https://youtu.be/DTvS9lvRxZ8?feature=shared&t=354
+
+{Embed}
+Mark Rober
+https://www.youtube.com/watch?v=DTvS9lvRxZ8&start=354
+Backyard Squirrel Maze 2.0- The Walnut Heist
+NEW Phat Gus Merch here!! https://markrober.store/
+
+I started a company called CrunchLabs where we build a toy together and then I teach you all the juicy physics for how it works. So if you want to learn to think like an engineer and have really fun time doing it, check out the current promotion where you get 2 FREE boxes at https://crunchlabs....
+Code4rena - ARCHIVE-Q1-2024 - phala-mar01 [1211751995644452985].txt_Files/maxresdefault-A4584.jpg
+
+{Reactions}
+🌰 
+
+[03/02/2024 02:47] stryder1496
+i am getting this erorr while setup
+
+{Attachments}
+Code4rena - ARCHIVE-Q1-2024 - phala-mar01 [1211751995644452985].txt_Files/image-2E86D.png
+
+
+[03/02/2024 04:54] kvinwang.cn
+Sorry, we've never built it on Windows. It is recommend to build it on macOS or Ubuntu, then you can `apt install libcang-dev` it the error still there.
+
+
+[03/02/2024 07:30] h4x3rotab
+Hey all! Thanks for participating the audit contest. Please reach out to @Kevin Wang and me for any problems.
+
+{Reactions}
+🫡 
+
+[03/02/2024 11:02] carrotsmuggler
+are the actual contracts in scope, or only the runtime?
+
+
+[03/02/2024 14:17] 0xarsi
+anyone having issues with rust-analyzer not recognizing a single thing
+
+
+[03/02/2024 16:22] ronpetamgas666
+WSL can help on Windows, helped me a lot before switching to linux
+
+{Reactions}
+👍 
+
+[03/03/2024 19:06] koolexc
+With vs code you mean? The extension?
+
+
+[03/03/2024 19:07] 0xarsi
+Yeah
+
+
+[03/03/2024 19:07] koolexc
+If so, yes. Often, it takes forever to recognize functions, mods... etc
+
+
+[03/03/2024 19:07] koolexc
+I don't know how to fix it. It was working.. Few minutes later, it stopped
+
+
+[03/03/2024 19:07] koolexc
+Found any workaround?
+
+
+[03/03/2024 19:07] 0xarsi
+Yeah it was also working for me briefly then just stopped
+
+
+[03/03/2024 19:08] koolexc
+On Mac?
+
+
+[03/03/2024 19:08] 0xarsi
+WSL
+
+
+[03/03/2024 19:08] koolexc
+Seems a bug in the extension..
+
+
+[03/03/2024 19:08] 0xarsi
+I tried rebuilding and also tweaking rust analyzer settings but nothing worked
+
+
+[03/03/2024 19:09] 0xarsi
+Maybe, but it recognized substrate related stuff in a different project for me
+
+
+[03/03/2024 19:09] 0xarsi
+It’s not even doing that for this one and I’m not sure why
+
+
+[03/03/2024 19:09] koolexc
+That's weird
+
+
+[03/03/2024 19:09] koolexc
+This all in vs code right?
+
+
+[03/03/2024 19:09] 0xarsi
+Yeah all in vscode. Do you use the rust-analyzer.linkedProjects setting by any chance?
+
+
+[03/03/2024 19:10] koolexc
+I didn't try to change any setting
+
+
+[03/03/2024 19:10] 0xarsi
+Oh ok
+
+
+[03/03/2024 19:10] koolexc
+Try to disable enable the ext?
+
+
+[03/03/2024 19:10] 0xarsi
+Does your rust analyzer error out or does it just seem like it worked but nothing is recognized
+
+
+[03/03/2024 19:11] 0xarsi
+Yeah I might disable/reenable or reload it
+
+
+[03/03/2024 19:11] koolexc
+Yeah, it seem it worked but nothing is happening
+
+
+[03/03/2024 19:11] 0xarsi
+Ah ok yeah I have the same issue even after specifying the Cargo.toml files to the settings
+
+
+[03/03/2024 19:12] koolexc
+There is this bar loader on the top , it shows it's trying to do its job.. But it stays like this forever
+
+
+[03/03/2024 19:12] 0xarsi
+Oh that’s odd
+
+
+[03/03/2024 19:12] 0xarsi
+I don’t have that
+
+
+[03/03/2024 19:12] koolexc
+I kinda gave up on it.. Any other extension as an alternative?
+
+
+[03/03/2024 19:13] koolexc
+Any idea?
+
+
+[03/03/2024 19:28] 0xarsi
+When the analyzer is building/checking can you see it checking/building/indexing each pallet or crate?
+
+
+[03/03/2024 19:30] koolexc
+Only in the beginning yes, in the bottom bar
+
+
+[03/03/2024 19:31] 0xarsi
+Yeah I have the same thing but once it’s done it does not load any definitions for anything lol
+
+
+[03/03/2024 19:33] 0xarsi
+It works for me for other substrate projects/ solana projects so this is some proj specific issue idk what tho
+
+
+[03/03/2024 19:34] 0xarsi
+@Hang - Phala any ideas on how to fix this?
+
+
+[03/03/2024 20:06] h4x3rotab
+Rust analyzer is generally slow. Especially, our project has large dependencies. I’d suggest to not rely on code suggestions. If you like to see the doc, you can try “cargo doc --document-private-items”
+
+
+[03/03/2024 20:06] h4x3rotab
+Do you see any warnings or errors from rust analyzer?
+
+
+[03/03/2024 20:08] h4x3rotab
+Also, give “cargo check” a try since it creates at least the debug build artifacts. Not sure if it accelerates the rust analyzer loading, but I see when rust analyzer finished, it produces the debug artifacts inside the target dir
+
+{Reactions}
+👍 
+
+[03/03/2024 20:09] 0xarsi
+regarding this, i got it to work by deleting the target dir, letting rust analyzer build once, then i added the following settings in my `.vscode/settings.json` so it only runs cargo check instead of building every time
+```
+{
+    "rust-analyzer.cargo.buildScripts.enable": false,
+    "rust-analyzer.cargo.buildScripts.rebuildOnSave": false,
+    "rust-analyzer.checkOnSave": true,
+    "rust-analyzer.inlayHints.parameterHints.enable": true,
+    "rust-analyzer.procMacro.enable": true,
+    "rust-analyzer.linkedProjects": [
+        "/path/to/project/root/cargo/toml/file",
+    ]
+}
+```
+
+{Reactions}
+👍 (2) 
+
+[03/04/2024 10:08] koolexc
+Thank you
+
+
+[03/04/2024 10:12] koolexc
+will try this, thank you
+
+
+[03/04/2024 10:54] koolexc
+`cargo check` and .vscode/settings.json solved the problem in my case!
+
+{Reactions}
+✅ (2) 👍 (2) 
+
+[03/04/2024 10:55] koolexc
+Thank you guys , I appreciate it
+
+
+[03/04/2024 14:28] koolexc
+The wasm contracts used in testing, I see from metadata that it was written in rust, Correct? Are they available somewhere?
+
+
+[03/04/2024 15:14] h4x3rotab
+Yes.
+
+
+[03/04/2024 15:14] h4x3rotab
+@Shelven | Phala
+
+
+[03/04/2024 15:39] h4x3rotab
+You can find contracts from: use.ink
+
+{Reactions}
+👍 
+
+[03/04/2024 15:39] h4x3rotab
+It’s compatible with ink smart contracts
+
+
+[03/04/2024 15:43] koolexc
+Thanks. will check those out
+
+
+[03/04/2024 16:17] koolexc
+> These extensions introduce Phala-exclusive features, such as enabling HTTP requests in query operations.
+> 
+
+What are the other features ? is there a doc that list it?
+
+
+[03/04/2024 16:29] h4x3rotab
+On the other hand, Phat Contract has its own features. You can find templates here: https://docs.phala.network/developers/build-on-phat-contract/create-contract
+
+{Embed}
+https://docs.phala.network/developers/build-on-phat-contract/create-contract
+Create Contract
+Code4rena - ARCHIVE-Q1-2024 - phala-mar01 [1211751995644452985].txt_Files/https%253A%252F%252F2021577985-files.gitbo-241F6
+
+
+[03/04/2024 16:30] h4x3rotab
+Yes. Most notably, http request, ecdsa signing, and local cache.
+
+
+[03/04/2024 16:30] h4x3rotab
+Here’s a list: https://docs.phala.network/developers/build-on-phat-contract/use-pink-extension
+
+{Embed}
+https://docs.phala.network/developers/build-on-phat-contract/use-pink-extension
+Use Pink Extension
+Code4rena - ARCHIVE-Q1-2024 - phala-mar01 [1211751995644452985].txt_Files/https%253A%252F%252F2021577985-files.gitbo-241F6
+
+
+[03/04/2024 16:32] h4x3rotab
+You can find docs on extensions here: https://docs.rs/pink/latest/pink/
+
+{Embed}
+https://docs.rs/pink/latest/pink/
+pink - Rust
+Pink! is a smart contract language extending Parity’s `ink!`. It extends the basic functionality with additional features, tailored to interact efficiently with Phala’s Phat Contract runtime.
+
+
+[03/04/2024 16:46] koolexc
+Fantastic! Thank you 🙏
+
+{Reactions}
+❤️ 
+
+[03/04/2024 22:30] 0xarsi
+by the way is the code in scope the exact same as the code in the phala blockchain repo? I think it said this in the readme but just wanted to confirm that it's identical to the code in scope in the bigger repo
+
+{Reactions}
+👍 
+
+[03/05/2024 00:42] kvinwang.cn
+https://github.com/code-423n4/2024-03-phala-network/pull/4
+The only differance is this PR which fix a compilation error of unittest on macOS.
+
+{Embed}
+https://github.com/code-423n4/2024-03-phala-network/pull/4
+Make tests works cross-platform by kvinwang · Pull Request #4 · cod...
+Code4rena - ARCHIVE-Q1-2024 - phala-mar01 [1211751995644452985].txt_Files/4-7C988
+
+{Reactions}
+👍 (2) 
+
+[03/05/2024 02:17] shelvenzhou
+CC @Kevin Wang for this
+
+{Reactions}
+🙏 
+
+[03/05/2024 02:54] kvinwang.cn
+Most of them is from here: https://github.com/Phala-Network/phat-contract-examples
+check_system.contract: https://github.com/code-423n4/2024-03-phala-network/tree/main/phala-blockchain/e2e/contracts/check_system
+system.contract: https://github.com/Phala-Network/phala-blockchain/tree/master/crates/pink-drivers/system
+
+{Reactions}
+🙏 (2) 
+
+[03/06/2024 10:02] koolexc
+@Shelven | Phala DMed for a question if you don’t mind
+
+{Reactions}
+👌 
+
+[03/06/2024 19:37] kartoonjoy
+🚨 No DMs, wardens. Private threads only. Thanks!
+
+
+[03/06/2024 19:38] 0xarsi
+My bad, thought they were in a different role
+
+
+[03/06/2024 19:39] kartoonjoy
+You're right that Kevin is the sponsor. We want to keep things in private threads and not DMs
+
+{Reactions}
+👍 
+
+[03/06/2024 20:40] koolexc
+Apologies, I completely forgot this option.
+
+{Reactions}
+👍 hi5 
+
+[03/09/2024 11:23] ak19966
+I am getting follwoing error in wsl2
+
+
+[03/09/2024 11:23] ak19966
+error: failed to run custom build command for `pink-capi v0.1.0 (/home/code4rena/2024-03-phala-network/phala-blockchain/crates/pink/capi)`
+
+Caused by:
+  process didn't exit successfully: `/home/code4rena/2024-03-phala-network/phala-blockchain/target/debug/build/pink-capi-62a3be73d9f58bed/build-script-build` (exit status: 101)
+
+
+[03/09/2024 11:23] ak19966
+I know it is due to permission issue..
+
+
+[03/09/2024 11:23] ak19966
+trying to figure out it.
+
+
+[03/09/2024 11:23] ak19966
+any help much appreciated!
+
+
+[03/09/2024 11:23] ak19966
+thanks!
+
+
+[03/11/2024 21:32] theschnilch
+I wrote a simple contract that uses is_in_transaction in a function. I uploaded this contract in a test in crates/pink/runtime/tests/test_pink_contract.rs using cluster.tx().upload_code(). However, when I call the function that uses is_in_transaction with cluster.tx().call_typed, this function always returns false. Shouldn't it actually be true since I sent a transaction to the contract? @Hang - Phala
+
+
+[03/11/2024 22:46] theschnilch
+I've found out that it's not because of the runtime. It looks more like the return value is somehow not being decoded correctly
+
+{Reactions}
+👍 
+
+[03/12/2024 11:22] .anas_22
+Hello are all kind of attacks performed on a blockchain in scope? DOS, Access Control...
+
+
+[03/13/2024 01:45] kvinwang.cn
+Yes, reports on all types of attacks are welcome.
+
+{Reactions}
+👍 
+
+[03/15/2024 05:34] carlos.w.
+Seems there aren't automated findings in phala?
+
+
+[03/15/2024 05:35] kaveyjoe
+No bot Race so
+
+{Reactions}
+👍 
+
+[03/15/2024 06:07] 0xsorrynotsorry
+There's indeed, https://discord.com/channels/810916927919620096/1211751995644452985/1213214688767115345
+
+{Reactions}
+👍 
+
+[03/15/2024 06:35] h4x3rotab
+I suggest to run a Linux virtual machine, better Ubuntu
+
+
+[03/17/2024 20:01] amarfares
+@Onkar | C4 @Trebien | C4
+
+{Reactions}
+🙏 
+
+[03/20/2024 12:48] sourcier.eth.15
+Hi, do you have a github repository with some examples of phat contracts ?
+
+
+[03/20/2024 13:52] kvinwang.cn
+Yes, some examples here:
+https://github.com/Phala-Network/phat-dashboard/tree/master/phat/contracts
+https://github.com/Phala-Network/index-contract/tree/main/contracts
+
+{Reactions}
+🫡 
+
+[03/21/2024 23:36] acegawd
+Sent a msg in private 🧵 @Kevin Wang
+
+
+[03/22/2024 20:02] C4
+**🚨 AUDIT ALERT**
+
+@🐺wardens The **Phat Contract Runtime** audit is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Keep an eye on #📢announcements for regular updates on how the audit is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a Contest-Admin if you have questions along the way!
+
+
+[03/23/2024 00:08] kaveyjoe
+98 Submissions🫡
+
+{Reactions}
+👍 
+
+[03/28/2024 09:54] nethoxa
+Hey, just wanna say I am learning A TON with this polkadot contests. Really awesome how much talent there is out there
+
+
+[03/28/2024 09:54] nethoxa
+https://tenor.com/view/smiling-smiling-cat-cat-cute-kitty-gif-12097880735853048722
+
+{Embed}
+https://tenor.com/view/smiling-smiling-cat-cat-cute-kitty-gif-12097880735853048722
+Code4rena - ARCHIVE-Q1-2024 - phala-mar01 [1211751995644452985].txt_Files/smiling-smiling-cat-1FEAB.png
+
+
+[03/28/2024 09:55] nethoxa
+The findings are awesome, really
+
+
+[03/28/2024 15:25] carlos.w.
+Have phala's findings been made public?
+
+
+[03/28/2024 15:54] nethoxa
+nope, you can only see them if you have backstage
+
+{Reactions}
+👍 
+
+[03/28/2024 15:57] carlos.w.
+When will the result come?
+
+
+[04/01/2024 13:18] thebrittfactor
+🤑 🎉  Awards for **Phala Phat Contract Runtime**:
+
+$15,937.96 USDC » @DadeKuma
+$15,225.88 USDC » @zhaojie
+$12,619.43 USDC » @0xTheC0der
+$2,606.45 USDC » @Koolex
+$994.09 USDC » @Cryptor
+$630.47 USDC » @hunter_w3b
+$484.98 USDC » @Albahaca
+$484.98 USDC » @popeye
+$391.62 USDC » @ihtishamsudo
+$129.08 USDC » @Bauchibred
+$69.85 USDC » @Daniel526
+$69.85 USDC » @XDZIBECX
+$59.23 USDC » @0xepley
+$59.23 USDC » DarkTower (@Kenzo, @0xrex, @haxatron)
+$59.23 USDC » @Aariiif
+$59.23 USDC » @Fouzantanveer
+$59.23 USDC » @kaveyjoe
+$59.23 USDC » roguereggiant
+
+🏁 Findings summary
+--------------------------------------
+High risk findings: 0 unique (0 total)
+Med risk findings: 4 unique (6 total)
+QA reports: 7 (Best: Cryptor)
+Advanced analysis reports: 11 (Best: hunter_w3b)
+
+Awards will be distributed on Polygon within the next week. Congratulations all!  💸 💸 💸
+
+*Note: If you participated in this audit and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+🎉 (6) 👀 
+
+[04/01/2024 13:22] 0xpopeye
+Congrats @DadeKuma
+
+{Reactions}
+🎉 (4) thankyou 
+
+[04/01/2024 13:31] evokid
+Big congrats 🎉 the audit monster @DadeKuma
+
+{Reactions}
+thankyou 
+
+[04/10/2024 21:28] itsmetechjay
+ℹ️ This channel is pending archive.   As a result, any private threads will be permanently deleted on Friday, 19 April 2024. Please make sure to grab anything you might need before then.
+
+
+[04/18/2024 20:24] itsmetechjay
+ℹ️ Reminder: this channel will be deleted in 24 hours.
+
+
+==============================================================
+Exported 113 message(s)
+==============================================================
